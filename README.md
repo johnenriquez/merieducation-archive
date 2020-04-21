@@ -4,4 +4,4 @@
 
 ## Technology
 
-The MeriEducation site is a Wordpress / PHP theme built with HTML5, CSS3, and the [Genesis Framework](https://my.studiopress.com/themes/genesis/)
+The MeriEducation site is a Wordpress / PHP theme built with HTML5, CSS3, and the [Genesis Framework](https://my.studiopress.com/themes/genesis/).
