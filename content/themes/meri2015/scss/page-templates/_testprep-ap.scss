@@ -1,0 +1,49 @@
+/**
+ * Styles for TestPrep - AP
+ *
+ * @package meri2015
+ */
+
+.testprep-ap-mast {
+  @include masthead;
+  // background-image: url( 'img/ap-mast.jpg' );
+}
+
+.testprep-ap-lede {
+  text-align: center;
+  padding: 3em 1em 1em;
+}
+
+.testprep-ap-list {
+
+  padding: 0 1em 3em;
+
+  ul {
+    @include breakpoint( 480px ) { column-count: 2; }
+    @include breakpoint( 800px ) { column-count: 3; }
+  }
+  li {
+    margin-left: 2em;
+    list-style: bullet;
+  }
+
+}
+
+.testprep-ap-interlude-1,
+.testprep-ap-interlude-2 {
+  @include image-interlude;
+  height: 60vh;
+}
+
+.testprep-ap-typical-prog {
+  padding: 3em 1em;
+}
+
+.testprep-ap-exam-schedule {
+  padding: 3em 1em;
+  h2 { text-align: center; }
+}
+  .testprep-ap-exam-schedule td {
+    font-size: .8em;
+    padding: .5em;
+  }

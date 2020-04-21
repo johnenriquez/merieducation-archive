@@ -1,0 +1,64 @@
+/**
+ * Styles for Contact
+ *
+ * @package meri2015
+ */
+
+.contact-mast {
+  @include masthead;
+  // background-image: url( 'img/contact-mast.jpg' );
+  // background-position: bottom center;
+}
+
+.contact-try-us {
+  padding: 3em 1em;
+  text-align: center;
+
+  input[type="checkbox"] {
+    -webkit-appearance: checkbox;
+  }
+
+  .gfield {
+    margin-bottom: 2em;
+  }
+
+  .gfield_label {
+    color: $meri-color-2;
+  }
+
+  .gform_wrapper {
+    width: 40em;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .gform_title { display: none; }
+}
+
+.contact-locations {
+  padding-bottom: 3em;
+  text-align: center;
+
+  @include breakpoint( 800px ) {
+    text-align: left;
+  }
+
+  .one-fourth {
+    padding-bottom: 2em;
+  }
+
+  h2 {
+    text-align: center;
+    padding: 1em;
+  }
+
+  a { font-weight: bold; }
+
+}
+
+.contact-join-squad {
+  padding: 3em 1em;
+  text-align: center;
+
+  a { font-weight: bold; }
+}

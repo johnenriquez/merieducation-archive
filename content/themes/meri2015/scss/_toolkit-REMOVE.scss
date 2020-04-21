@@ -1,0 +1,59 @@
+// layout stuff @todo fix this
+@mixin fullbleedrow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+}
+
+@mixin fullbleedrow__primary($max-width: 100%) {
+  width: 100%;
+  max-width: $max-width/2;
+  // align-self: flex-end;
+}
+
+@mixin fullbleedrow__secondary($max-width: 100%) {
+  width: 100%;
+  max-width: $max-width/2;
+  // align-self: flex-end;
+}
+
+
+
+.fullbleedrow { @include fullbleedrow; }
+.row__primary { @include fullbleedrow__primary( $structural-wrap-max-width ); }
+.row__secondary { @include fullbleedrow__secondary( $structural-wrap-max-width ); }
+
+@mixin masthead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  height: 50vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  @include breakpoint( 900px ) {
+    height: 60vh;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 3em;
+    padding: 1em .5em 0;
+    color: #fff;
+  }
+}
+
+@mixin ledetext {
+  h2 { font-size: 2em; }
+  p { font-size: 1.2em; }
+}
+
+@mixin image-interlude( $background-url: '' ) {
+  height: 55vh;
+  overflow-y: hidden;
+}

@@ -1,0 +1,73 @@
+/**
+ * Styles for the Innovations Page
+ *
+ * @package meri2015
+ */
+
+.innovations-mast {
+  @include masthead;
+  // background-image: url( 'img/innovations-05.jpg' );
+  // background-position: bottom center;
+}
+
+.innovations-imeri {
+  @include fullbleedrow;
+
+  .row__primary,
+  .row__secondary {
+    padding: 3em 1em;
+  }
+
+  .row__primary {
+    @include fullbleedrow__primary($structural-wrap-max-width);
+    text-align: right;
+
+    h2 { font-size: 3em; } // @todo this is a pattern
+  }
+  .row__secondary {
+    @include fullbleedrow__secondary($structural-wrap-max-width);
+  }
+
+}
+
+.innovations-interlude-01 {
+  @include image-interlude;
+  // background-image: url( 'img/innovations-interlude-01.jpg' );
+}
+
+.innovations-cardology {
+
+  .cardology-lede {
+    @include fullbleedrow;
+  }
+
+  .row__primary,
+  .row__secondary {
+    padding: 3em 1em;
+  }
+
+  .row__primary {
+    @include fullbleedrow__primary($structural-wrap-max-width);
+  }
+  .row__secondary {
+    @include fullbleedrow__secondary($structural-wrap-max-width);
+
+  }
+
+  .cardology-blocks {
+    padding-bottom: 3em;
+    width: 50em;
+    text-align: center;
+
+    .cardology-block {
+      margin: .5em;
+      display: inline-block;
+    }
+  }
+  .app-store-badge {
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    width: 10em;
+  }
+}

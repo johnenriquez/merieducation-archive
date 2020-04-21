@@ -1,0 +1,143 @@
+/**
+ * Miscellaneous Modules
+ *
+ * @package meri2015
+ */
+
+
+/* ## Gallery
+--------------------------------------------- */
+
+.gallery {
+  overflow: hidden;
+}
+
+.gallery-item {
+  float: left;
+  margin: $gallery-item-margin;
+  text-align: center;
+}
+
+.gallery-columns-2 .gallery-item {
+  width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+  width: 33%;
+}
+
+.gallery-columns-4 .gallery-item {
+  width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+  width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+  width: 16.6666%;
+}
+
+.gallery-columns-7 .gallery-item {
+  width: 14.2857%;
+}
+
+.gallery-columns-8 .gallery-item {
+  width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+  width: 11.1111%;
+}
+
+.gallery img {
+  border: $gallery-img-border;
+  height: auto;
+  padding: 4px;
+}
+
+.gallery img:hover {
+  border: $gallery-img-hover-border;
+}
+
+/* ## Avatar
+--------------------------------------------- */
+
+.avatar {
+  float: left;
+}
+
+.alignleft .avatar,
+.author-box .avatar {
+  margin-right: $avatar-margin;
+}
+
+.alignright .avatar {
+  margin-left: $avatar-margin;
+}
+
+.comment .avatar {
+  margin: $comment-avatar-margin;
+}
+
+/* ## Genesis
+--------------------------------------------- */
+
+.breadcrumb {
+  margin-bottom: $breadcrumb-margin-bottom;
+}
+
+.archive-description,
+.author-box {
+  background-color: $archive-author-box-bg-color;
+  font-size: $archive-author-font-size;
+  margin-bottom: $archive-author-box-margin-bottom;
+  padding: $archive-author-box-padding;
+
+  @include breakpoint( max-width $max-breakpoint-3 ) { padding: 0; }
+}
+
+.author-box-title {
+  font-size: $author-box-title-font-size;
+  margin-bottom: $author-box-title-margin-bottom;
+}
+
+.archive-description p:last-child,
+.author-box p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ## Search Form
+--------------------------------------------- */
+
+.search-form {
+  overflow: hidden;
+}
+
+.site-header .search-form {
+  float: right;
+
+  @include breakpoint( max-width $max-breakpoint-2 ) {
+    float: none;
+    margin: 16px auto;
+    text-align: center;
+  }
+}
+
+.entry-content .search-form,
+.site-header .search-form {
+  width: 50%;
+}
+
+.genesis-nav-menu .search input[type="submit"],
+.widget_search input[type="submit"] {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+

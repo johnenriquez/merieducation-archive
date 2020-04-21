@@ -1,0 +1,39 @@
+/**
+ * Widget Stylings
+ *
+ * @package meri2015
+ */
+
+.widget {
+  word-wrap: break-word;
+}
+
+  .sidebar .widget {
+    background-color: #fff;
+    margin-bottom: 40px;
+    padding: 40px;
+
+    @include breakpoint( max-width $max-breakpoint-3 ) { padding: 0; }
+  }
+
+.widget ol > li {
+  list-style-position: inside;
+  list-style-type: decimal;
+  padding-left: 20px;
+  text-indent: -20px;
+}
+
+.widget li li {
+  border: none;
+  margin: 0 0 0 30px;
+  padding: 0;
+}
+
+.widget_calendar table {
+  width: 100%;
+}
+
+.widget_calendar td,
+.widget_calendar th {
+  text-align: center;
+}

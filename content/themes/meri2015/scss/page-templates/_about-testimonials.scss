@@ -1,0 +1,27 @@
+/**
+ * Styles for Testimonials
+ *
+ * @package meri2015
+ */
+
+.about-testimonials-mast {
+  @include masthead;
+  // background-image: url( 'img/testimonials-mast.jpg' );
+}
+
+.about-testimonials__item {
+  clear: both;
+
+  blockquote {
+    font-style: normal;
+  }
+
+  .quote-source {
+    font-family: $headline-font-family;
+  }
+}
+
+.vector-person {
+  width: auto;
+  height: 200px;
+}

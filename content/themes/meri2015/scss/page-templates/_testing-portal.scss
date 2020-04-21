@@ -1,0 +1,39 @@
+/**
+ * Styles for Testing Portal
+ *
+ * @package meri2015
+ */
+
+.testing-portal-mast {
+  background-color: #444;
+  text-align: center;
+  padding: 2.5em 1em;
+  border-bottom: 20px solid #fff;
+
+
+  h2 {
+    color: #fff;
+    font-size: 2.5em;
+  }
+}
+
+.testing-registration {
+  text-align: center;
+  padding: 2.5em 1em;
+}
+
+.proctor-videos {
+  padding: 2.5em 1em;
+  text-align: center;
+}
+
+.testing-booklets {
+  padding: 2.5em 1em;
+  text-align: center;
+
+  h2 { text-align: center; }
+  a {
+    display: inline-block;
+    margin: .5em;
+  }
+}

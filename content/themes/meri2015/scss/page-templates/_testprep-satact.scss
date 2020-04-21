@@ -1,0 +1,130 @@
+/**
+ * Styles for the Test Prep / SAT & ACT page
+ *
+ * @package meri2015
+ */
+
+.testprep-satact-mast {
+  @include masthead;
+  // background-image: url( 'img/testprep-satact-11.jpg' );
+}
+
+
+.testprep-satact-curriculum {
+  padding: 3em 1em 1em;
+
+  .wrap {
+    max-width: .8 * $structural-wrap-max-width;
+  }
+
+  .lede {
+    font-size: 1.2em;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 2em;
+    text-align: center;
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  .one-half img {
+    width: auto;
+    height: 15em;
+    margin: 0 auto;
+    display: block;
+  }
+  .new-sat {
+    transform: rotate(20deg);
+  }
+}
+  .testprep-satact-02,
+  .testprep-satact-03 {
+    height: auto;
+    width: 300px;
+  }
+  .testprep-satact-curriculum-img {
+    height: auto;
+    width: 200px;
+  }
+
+.testprep-satact-image-interlude-1 {
+  @include image-interlude;
+  // background-image: url( 'img/testprep-satact-timer.jpg' );
+}
+
+.testprep-satact-average-program {
+  padding: 3em 1em;
+
+  ul {
+    margin-bottom: 1em;
+  }
+
+  li {
+    margin-left: 2em;
+    list-style: bullet;
+  }
+}
+
+.testprep-satact-aux {
+  // @include fullbleedrow
+  // align-items: flex-start;
+  // background-color: $meri-color-1;
+  padding: 0 1em 3em;
+}
+
+.testprep-satact-bonus {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testprep-satact-cardology-apps {
+  text-align: center;
+
+  img { width: 150px; }
+
+  .app-store-badge { display: block; margin: 0 auto; }
+}
+
+.testprep-satact-newsat {
+  @include fullbleedrow;
+  padding-bottom: 3em;
+
+
+  img {
+    height: 300px;
+    width: auto;
+    margin: 1em;
+  }
+
+  .row__primary {
+    text-align: center;
+    width: 20em;
+
+    @include breakpoint( 800px ) {
+      text-align: right;
+    }
+  }
+
+  ul {
+    margin-bottom: 1em;
+  }
+
+  li {
+    margin-left: 2em;
+    list-style: bullet;
+  }
+
+}
+
+.testprep-satact-image-interlude-2 {
+  @include image-interlude;
+  // background-image: url( 'img/testprep-satact-peter.jpg' );
+}
+
+.testprep-satact-next-test-dates {
+  padding: 3em 1em;
+}

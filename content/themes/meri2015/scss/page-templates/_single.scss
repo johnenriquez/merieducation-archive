@@ -1,0 +1,13 @@
+/**
+ * Styles for the Blog Index page
+ *
+ * @package meri2015
+ */
+
+.single-mast {
+  @include masthead;
+}
+
+// .blogindex .entry-title a {
+//   color: $meri-color-3;
+// }

@@ -1,0 +1,17 @@
+/**
+ * Styles for iMeri
+ *
+ * @package meri2015
+ */
+
+.imeri-mast {
+  @include masthead;
+}
+
+.imeri-lede {
+  padding: 3em 1em;
+  text-align: center;
+}
+  .imeri-lede .textbolding :not(span) {
+    font-size: .9em;
+  }

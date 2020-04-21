@@ -1,0 +1,222 @@
+/**
+ * Styles for the homepage
+ *
+ * @package meri2015
+ */
+
+// .homepage-footers {
+//   @include clearfix;
+//   color: $secondary-footer-text-color;
+//   background-color: $secondary-footer-background-color;
+//   padding: 40px 0;
+// }
+
+// .homepage-footer-1,
+// .homepage-footer-2 {
+//   float: left;
+//   width: 48.717948717948715%;
+//   margin-left: 2.564102564102564%;
+
+//   @include breakpoint( max-width $max-breakpoint-3 ) {
+//     margin: 0;
+//     width: 100%;
+//   }
+// }
+
+// .homepage-footer-1 {
+//   margin-left: 0;
+// }
+
+.homepage-experience-tutoring {
+
+  padding: 3em 1em;
+  text-align: center;
+  background-image: url( 'img/homepage-smaller-mast.jpg' );
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  @include breakpoint( 800px ) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 85vh;
+    background-image: url( 'img/homepage-full-mast.jpg' );
+  }
+
+  h2 {
+    color: #fff; //$meri-color-1;
+    font-size: 2em;
+
+    @include breakpoint( 1200px ) {
+      font-size: 2.5em;
+    }
+  }
+
+  p {
+    font-weight: 500;
+    max-width: .6 * $structural-wrap-max-width;
+    margin: 0 auto;
+    color: #fff;
+
+    @include breakpoint( 1200px ) {
+      font-size: 1.3em;
+    }
+  }
+
+  .button {
+    font-family: $headline-font-family;
+    margin-top: 2em;
+    background-color: $meri-color-2;
+
+    &:hover { background-color: $meri-color-1; }
+  }
+
+}
+  .home-02 {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: block;
+  }
+
+.homepage-announcements {
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+}
+  .lslide {
+    height: 100%;
+  }
+  .announcement-slide {
+    // height: 100%;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+  }
+
+
+.hearts {
+  float: right;
+  padding-left: 10px;
+  img { width: 30px; height: auto; display: block; animation-delay: .4s; padding-bottom: 1em; }
+
+  .heart1 {position: relative; left: 10px;}
+  .heart2 {}
+  .heart3 {position: relative; left: 10px;}
+  .heart4 {}
+}
+
+.homepage-hassle-free {
+  @include fullbleedrow;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  text-align: center;
+
+  .wrap {
+    max-width: .9 * $structural-wrap-max-width;
+  }
+
+  .homepage-hasslefree-img {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 1em;
+  }
+}
+
+.homepage-bubbles {
+  max-width: 30em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 2em;
+}
+
+.homepage-hasslefree-icons {
+  width: 75%;
+  margin: 1em;
+}
+
+.homepage-image-interlude-1 {
+  @include image-interlude;
+  // background-position: top center;
+  // background-image: url( 'img/home-05.jpg' );
+}
+
+.homepage-testimonial {
+  width: 100%;
+  display: block;
+}
+  .homepage-why-they-love-us .light-slider li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
+.homepage-we-do-better {
+  @include ledetext;
+  padding: 3em 1em 0;
+  text-align: center;
+
+  h2 {
+    color: $meri-color-2;
+  }
+}
+
+.homepage-what-we-do {
+  margin-top: 1em;
+  margin-bottom: 3em;
+  text-align: center;
+  .wrap {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+
+.homepage-what-we-do__item {
+  padding-top: 1em;
+}
+
+.homepage-image-interlude-2 {
+  @include image-interlude;
+  height: 55vh;
+  // background-image: url( 'img/home-11.jpg' );
+  // background-position: top center;
+}
+
+
+.homepage-why-they-love-us {
+  padding: 2em 1em;
+
+  .love-us-wrap {
+    @include fullbleedrow;
+  }
+
+  .row__primary,
+  .row__secondary {
+    padding: 1em;
+  }
+
+  .row__primary {
+    text-align: right;
+    .love-us-img {
+      width: 80%;
+    }
+    h2 {
+      font-size: 2em;
+      color: $meri-color-4;
+    }
+  }
+
+  .love-us-cta {
+    padding-top: 1em;
+    text-align: center;
+  }
+}
+
+.homepage-instagram-grid {
+  padding: 2em 1em;
+}
+

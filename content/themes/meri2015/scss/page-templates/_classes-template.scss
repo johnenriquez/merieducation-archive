@@ -1,0 +1,103 @@
+/**
+ * Styles for Classes Page Template
+ *
+ * @package meri2015
+ */
+
+
+.classes-mast {
+  @include masthead;
+  // background-image: url( 'img/classes-01.jpg' );
+  // background-position: center right;
+}
+
+.subject-breakdown {
+  text-align: left;
+}
+
+.classes-interlude-01 {
+  @include image-interlude;
+  // background-image: url( 'img/classes_interlude_01.jpg' );
+}
+
+.classes-tutoring {
+  padding: 3em 1em;
+  text-align: center;
+}
+
+
+.classes-blocks {
+  padding-bottom: 2em;
+}
+.classes-block__item {
+  display: inline-block;
+  height: auto;
+  width: 150px;
+  padding: .25em;
+
+  @include breakpoint( max-width 800px ) {
+    padding: 1em;
+  }
+}
+
+.classes-coaching {
+
+  padding: 3em 1em;
+
+  ul {
+
+  }
+  li {
+    list-style: bullet;
+    margin-left: 2em;
+  }
+
+}
+
+.classes-coaching-container {
+  padding: 0 5%;
+}
+
+.classes-coaching__main {
+  text-align: center;
+}
+
+.classes-coaching__list {
+  @include fullbleedrow;
+
+  .row__primary {
+    max-width: 100%;
+    text-align: center;
+
+    @include breakpoint( 800px ) {
+      text-align: right;
+      width: 30%;
+    }
+
+    img {
+      width: 50%;
+      @include breakpoint( 800px ) {
+        width: 100%;
+      }
+    }
+
+  }
+  .row__secondary {
+    width: 70%;
+  }
+}
+
+.classes-main-case-study {
+  padding: 3em 1em;
+}
+
+.classes-image-interlude-1 {
+  @include image-interlude;
+  // background-image: url( 'img/classes-02.jpg' );
+}
+
+.classes-college-and-beyond {
+  padding: 3em 1em;
+  text-align: center;
+}
+

@@ -1,0 +1,283 @@
+/**
+ * Styles for the main site header
+ *
+ * @package meri2015
+ */
+
+$header-height: 3.25em;
+
+.site-header {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  background-color: $site-header-background-color;
+
+  @include breakpoint( $larger-primary-menu-fits ) {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
+
+.site-logo {
+  width: 12em;
+  padding: .5em;
+  display: block;
+}
+
+// also the menu toggle on small screens;
+.skip {
+  margin-left: auto;
+  padding: .5em;
+  align-self: center;
+  font-weight: bold;
+  color: $meri-color-2;
+
+  &:hover { color: $meri-color-2; }
+
+  @include breakpoint( $larger-primary-menu-fits ) {
+    display: none;
+  }
+}
+  .skip .menu-label { font-size: .6em; }
+  // the middle line
+  .skip .menu-icon {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: .5em;
+    font-weight: normal;
+    color: inherit;
+    background: currentColor;
+    border-radius: .5em;
+    height: 2px;
+    width: 2.3em;
+    margin-left: .25em;
+    margin-right: .5em;
+  }
+    // the top and bottom lines
+    .skip .menu-icon:before,
+    .skip .menu-icon:after {
+      border-radius: .5em;
+      height: 2px;
+      width: 100%;
+      left: 0;
+      background: currentColor;
+      position: absolute;
+      display: block;
+      content: '';
+    }
+    .skip .menu-icon:before { top: -6px; }
+    .skip .menu-icon:after { top: 6px; }
+    .skip .menu-icon,
+    .skip .menu-icon:before,
+    .skip .menu-icon:after { transition: all .5s ease-in-out; }
+    .skip .menu-icon.is-open {
+      background-color: transparent;
+      transform: rotate(45deg) translate(0%, -50%);
+    }
+    .skip .menu-icon.is-open:before,
+    .skip .menu-icon.is-open:after { top: 0em; }
+    .skip .menu-icon.is-open:before { transform: rotate(180deg); }
+    .skip .menu-icon.is-open:after { transform: rotate(270deg); }
+
+  // this toggle isn't necessary if the menu isn't hidden;
+  .no-js .skip { display: none; }
+
+.nav-primary { // the container
+  position: absolute;
+  width: 100%;
+  top: $header-height;
+  left: 0;
+  flex: 0 0 100%;
+  z-index: 9999;
+
+  // flex regularly when there's enough room
+  @include breakpoint( $larger-primary-menu-fits ) {
+    position: relative;
+    top: 0;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+// the primary menu ul
+.nav-primary .primary-menu {
+  background-color: $primary-menu-background-color;
+  text-transform: lowercase;
+  transition: max-height .5s ease-in-out;
+
+  @include breakpoint( $larger-primary-menu-fits ) {
+    display: flex;
+    align-content: stretch;
+    background: none;
+  }
+}
+  // any li within the primary ul
+  .primary-menu li {
+    position: relative;
+    transition: all 0.2s;
+
+    &.headercta {
+      background-color: $meri-color-2;
+    }
+
+    @include breakpoint( $larger-primary-menu-fits ) {
+      display: flex;
+      background: none;
+      cursor: pointer;
+      color: $larger-primary-menu-link-color;
+
+      &.headercta {
+        font-size: .9em;
+        margin: .75em .5em;
+        border-radius: 0.2em;
+
+        a:not(:hover) {
+          color: #fff;
+        }
+      }
+    }
+  }
+  // the triangle bullet point before every li
+  .primary-menu li ul li:before {
+    position: absolute;
+    display: block;
+    top: 50%;
+    transform: translateY( -50% );
+    left: -1em;
+    height: 0;
+    width: 0;
+    content: "";
+    border-color: transparent $primary-menu-secondary-link-color;
+    border-style: solid;
+    border-width: 4px 0 4px 4px;
+
+    // no triangle necessary on the horizontal menu
+    @include breakpoint( $larger-primary-menu-fits ) {
+      border: 0;
+    }
+  }
+  // every link within the ul
+  .primary-menu a {
+    padding: .25em .5em;
+    display: block;
+    color: $primary-menu-link-color;
+
+    @include breakpoint( $larger-primary-menu-fits ) {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 .5em;
+      color: $larger-primary-menu-link-color;
+    }
+
+  }
+    // when you hover over the link
+    .primary-menu a:hover {
+      background-color: $primary-menu-link-hover-background-color;
+    }
+
+  // all second-level children
+  .primary-menu > li ul {
+    margin-left: 2em;
+    transition: all 0.2s;
+
+    @include breakpoint( $larger-primary-menu-fits ) {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      margin-left: 0;
+      width: 10em;
+      text-align: center;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  .primary-menu > li:nth-child(3) ul {
+    @include breakpoint( $larger-primary-menu-fits ) {
+      width: 8em;
+    }
+  }
+
+   @include breakpoint( $larger-primary-menu-fits ) {
+    // adds a triangle to links all the top level links
+    .primary-menu > li.menu-item-has-children > a {
+      padding-right: 6px;
+    }
+    .primary-menu > li.menu-item-has-children > a:after {
+      content: "";
+      width: 0;
+      height: 0;
+      display: inline;
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX( -50% );
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 4px solid $larger-primary-menu-link-color;
+    }
+  }
+
+  // when you hover over a parent
+  .primary-menu > li:hover {
+    background-color: $larger-primary-menu-background-hover-color;
+
+    & > a { color: $larger-primary-menu-link-hover-color; }
+    & > a:after { border-top-color: $larger-primary-menu-link-hover-color; }
+  }
+  // the ul when you hover over a parent
+  .primary-menu > li:hover ul,
+  .primary-menu > li.is_hovered ul {
+    @include breakpoint( $larger-primary-menu-fits ) {
+      opacity: 1;
+      visibility: visible;
+      background-color: $larger-primary-menu-background-hover-color;
+    }
+  }
+  // the links within the children li
+  .primary-menu > li ul a {
+
+    @include breakpoint( $larger-primary-menu-fits ) {
+      background: none;
+      padding: .5em;
+      width: 100%;
+      text-align: center;
+      color: $primary-menu-secondary-link-color;
+
+    }
+  }
+  .js .nav-primary .primary-menu {
+    max-height: 0; // hide the menu
+    overflow: hidden;
+
+    @include breakpoint( $larger-primary-menu-fits ) {
+      max-height: 100%;
+      overflow: visible;
+    }
+  }
+  .js .nav-primary .primary-menu.is-open {
+    max-height: 30em; // something bigger than it'll ever be
+  }
+  .site-inner { transition: opacity .5s; }
+  .site-inner.is-faded { opacity: .3; }
+
+
+/**
+ * Sticky Header
+ */
+.sticky-header {
+    .site-header {
+      position: fixed;
+      width: 100%;
+      z-index: 9999;
+    }
+    .site-inner {
+      margin-top: $header-height;
+    }
+}

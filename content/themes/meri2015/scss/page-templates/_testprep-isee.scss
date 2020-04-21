@@ -1,0 +1,30 @@
+/**
+ * Styles for TestPrep - ISEE
+ *
+ * @package meri2015
+ */
+
+.testprep-isee-mast {
+  @include masthead;
+  // background-image: url( 'img/testprep-isee-mast.jpg' );
+}
+
+.isee-icon {
+  width: 150px;
+  height: auto;
+}
+
+.testprep-isee-lede {
+  text-align: center;
+  padding: 3em 1em 1em;
+}
+
+.testprep-isee-services {
+  padding: 3em 1em;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+.testprep-isee-test-dates {
+  padding: 3em 1em;
+}

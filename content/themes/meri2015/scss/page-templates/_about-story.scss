@@ -1,0 +1,161 @@
+/**
+ * Styles for the About / Our Story page
+ *
+ * @package meri2015
+ */
+
+.about-story-mast {
+  @include masthead;
+  // background-image: url( 'img/about-story-01.jpg' );
+}
+
+.about-story-philosophy {
+  text-align: center;
+  padding-top: 2em;
+
+  h2 { font-size: 2em; }
+  p { font-size: 1.2em; }
+
+  .wrap {
+    max-width: .7*$structural-wrap-max-width;
+  }
+}
+
+
+.about-story-grand-vision {
+  @include fullbleedrow;
+  padding: 3em 1em;
+
+  h2 {
+    color: $meri-color-2;
+    font-size: 2em;
+  }
+  p { font-size: .9em; }
+
+  .row__primary,
+  .row__secondary {
+    padding: 1em;
+  }
+
+  .row__primary {
+    max-width: .7 * $structural-wrap-max-width;
+  }
+
+}
+
+.about-story-image-interlude-1 {
+  @include image-interlude;
+  // background-image: url( 'img/about-story-04.jpg' );
+  margin-top: 1em;
+  height: 50vh;
+}
+
+.about-story-not-a-franchise {
+  padding: 2em 1em;
+
+  h2 {
+    text-align: center;
+    color: $meri-color-2;
+    font-size: 2em;
+  }
+
+  .wrap-sm {
+    max-width: .7*$structural-wrap-max-width;
+  }
+
+  .one-third {
+    text-align: center;
+  }
+}
+
+.about-story-tutors {
+  padding-top: 3em;
+
+  h2 {
+    text-align: center;
+    padding: 0 1em;
+    color: $meri-color-2;
+  }
+
+  .ninjas-wrap {
+    @include fullbleedrow;
+  }
+
+  .row__primary,
+  .row__secondary {
+    padding: 1em;
+  }
+
+  .row__primary {
+    width: 25%;
+  }
+}
+
+.about-story-happiness {
+
+}
+
+.testimonial-cta-wrap {
+  text-align: center;
+  padding: 1em;
+}
+.testimonial-cta {
+  background-color: $meri-color-2;
+  margin: 0 auto;
+  font-family: $headline-font-family;
+  text-align: center;
+
+  &:hover { background-color: $meri-color-1; }
+}
+
+.about-story-image-interlude-2 {
+  @include image-interlude;
+  // background-image: url( 'img/about-story-interlude-03.jpg' );
+  height: 55vh;
+}
+
+.about-story-image-interlude-4 {
+  @include image-interlude;
+  // background-image: url( 'img/about-story-interlude-04.jpg' );
+}
+
+
+.about-story-why-1-on-1 {
+  text-align: center;
+  margin: 2em 1em 0;
+
+  h2 { font-size: 2em; }
+  p { font-size: 1.2em; }
+}
+
+.about-story-hc-item {
+  @include fullbleedrow;
+
+  img {
+    height: auto;
+    width: 150px;
+  }
+
+  .row__primary,
+  .row__secondary {
+    padding: 1em .5em;
+  }
+
+  .row__primary {
+    width: 20%;
+  }
+
+}
+
+.about-story-hyper-customization {
+  padding-bottom: 3em;
+}
+
+.about-story-growth {
+  text-align: center;
+
+  h2 {
+    font-size: 2em;
+    color: $meri-color-4;
+  }
+}

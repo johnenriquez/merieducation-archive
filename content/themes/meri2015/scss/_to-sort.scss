@@ -1,0 +1,97 @@
+/**
+ * Stuff to be sorted
+ *
+ * @package meri2015
+ */
+
+
+
+
+.quote-source {
+  text-align: right;
+}
+
+.sublevel-navigation {
+  text-align: center;
+  padding: .5em 1em;
+  background-color: #f0f0f0;
+
+  li {
+    display: inline-block;
+    padding: .5em 1em;
+  }
+
+  a {
+    font-size: 1.2em;
+    font-family: $headline-font-family;
+    text-transform: uppercase;
+  }
+
+  a.active {
+    color: $meri-color-4;
+  }
+}
+
+.avg-program-list {
+  li {
+    list-style: bullet;
+    margin-left: 2em;
+  }
+  strong {
+    color: $meri-color-2;
+  }
+}
+
+/* ## try-us-free
+--------------------------------------------- */
+
+
+
+  /* ## Site Containers
+--------------------------------------------- */
+
+.site-inner,
+.wrap {
+
+}
+
+
+
+.full-bleed .site-inner {
+  max-width: 100%;
+}
+
+.site-inner {
+  margin-top: $site-header-height;
+}
+
+/* ## Column Widths and Positions
+--------------------------------------------- */
+
+/* ### Content */
+
+.content {
+  width: 100%;
+}
+  .full-width-content .content {
+    width: 100%;
+  }
+  .content-sidebar .content {
+    float: left;
+  }
+
+
+/* ### Primary Sidebar */
+
+.sidebar-primary {
+  width: 100%;
+
+  @include breakpoint( $max-breakpoint-2 ) {
+    float: right;
+    width: $sidebar-primary-width;
+  }
+}
+  .sidebar-content .sidebar-primary,
+  .sidebar-sidebar-content .sidebar-primary {
+    float: left;
+  }

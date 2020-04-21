@@ -1,0 +1,20 @@
+/**
+ * All styles related to secondary content (sidebar) formatting
+ *
+ * @package meri2015
+ */
+
+.sidebar {
+  font-size: 16px;
+}
+
+.sidebar li {
+  border-bottom: 1px dotted #ddd;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.sidebar p:last-child,
+.sidebar ul > li:last-child {
+  margin-bottom: 0;
+}

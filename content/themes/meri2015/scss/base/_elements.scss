@@ -1,0 +1,179 @@
+/**
+ * Styles for basic page elements
+ *
+ * @package meri2015
+ */
+
+
+/* ## Typographical Elements
+--------------------------------------------- */
+
+body {
+  font-family: $body-font-family;
+  font-weight: $body-font-weight;
+  color: $body-text-color;
+  background-color: $body-bg-color;
+  font-size: $body-font-size-lg;
+  line-height: $body-line-height;
+}
+
+a {
+  color: $default-link-color;
+  text-decoration: none;
+}
+  a:hover { color: $default-link-hover-color }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $headline-font-family;
+  font-weight: $headline-font-weight;
+  line-height: $headline-line-height;
+  margin: $headline-default-margin;
+  text-transform: $headline-text-transform;
+}
+
+h1,
+h2 {
+  color: $headline-primary-text-color;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  color: $headline-secondary-text-color;
+}
+
+h1 { font-size: $headline-h1-size; }
+h2 { font-size: $headline-h2-size; }
+h3 { font-size: $headline-h3-size; }
+h4 { font-size: $headline-h4-size; }
+h5 { font-size: $headline-h5-size; }
+h6 { font-size: $headline-h6-size; }
+
+a,
+button,
+input:focus,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+textarea:focus,
+.button,
+.gallery img {
+  transition: $body-default-transition;
+}
+
+::selection {
+  background-color: $body-selection-bg-color;
+  color: $body-selection-text-color;
+}
+
+p {
+  margin-bottom: $paragraph-bottom-margin;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+blockquote,
+cite,
+em,
+i {
+  font-style: italic;
+}
+
+blockquote {
+  font-style: $blockquote-font-style;
+  margin: $blockquote-margin;
+}
+
+/* ## Objects
+--------------------------------------------- */
+
+embed,
+iframe,
+img,
+object,
+video,
+.wp-caption {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+.featured-content img,
+.gallery img {
+  width: auto;
+}
+
+/* ## Tables
+--------------------------------------------- */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  line-height: $table-line-height;
+  margin-bottom: $table-margin-bottom;
+  width: 100%;
+}
+
+// @include breakpoint( max-width 600px ) {
+//   table th,
+//   table thead {
+//     display: none;
+//   }
+//   table td {
+//     display: block;
+//     text-align: right;
+//     @include clearfix;
+//   }
+//   table td:before {
+//     content: attr(data-label);
+//     float: left;
+//     text-transform: uppercase;
+//     font-weight: bold;
+//   }
+//   table tr {
+//     display: block;
+//     margin-bottom: 2em;
+//     border-bottom: $tbody-border-bottom;
+//   }
+// }
+
+tbody {
+  border-bottom: $tbody-border-bottom;
+}
+
+td,
+th {
+  text-align: left;
+}
+
+td {
+  border-top: $td-border-top;
+  padding: $td-padding;
+}
+
+thead,
+th {
+  font-weight: $th-font-weight;
+  font-family: $headline-font-family;
+}

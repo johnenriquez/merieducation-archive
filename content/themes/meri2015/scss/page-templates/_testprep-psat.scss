@@ -1,0 +1,32 @@
+/**
+ * Styles for TestPrep - PSAT
+ *
+ * @package meri2015
+ */
+
+.psat-mast {
+  @include masthead;
+  // background-image: url( 'img/psat-mast.jpg' );
+}
+
+.psat-lede {
+  text-align: center;
+  padding: 3em 1em;
+}
+
+.psat-average-program {
+
+  padding: 3em 1em;
+
+  li {
+    margin-left: 2em;
+    list-style: bullet;
+  }
+}
+
+.psat-average-program__lede {
+  // text-align: center;
+}
+.psat-upcoming-tests {
+  padding: 1em;
+}

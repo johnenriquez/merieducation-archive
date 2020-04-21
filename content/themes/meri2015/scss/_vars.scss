@@ -1,0 +1,308 @@
+/**
+ * All variables used for the template
+ *
+ * @package meri2015
+ */
+
+
+
+/**
+ * All variables used for the template
+ *
+ * @package feelgood2016
+ */
+
+/* ## Calculators
+--------------------------------------------- */
+
+$browser-context: 16; // Default
+@function em( $pixels, $context: $browser-context ) {
+  @if ( unitless($pixels) ) { $pixels: $pixels * 1px; }
+  @if (unitless($context)) { $context: $context * 1px; }
+
+  @return $pixels / $context * 1em;
+}
+
+/* ## Brand
+--------------------------------------------- */
+$meri-color-1: #addbf3; // light blue
+$meri-color-2: #57b7df; // regular blue
+$meri-color-3: #fcb040; // orange
+$meri-color-4: #8cc63f; // green
+$meri-color-5: #ffffff; // white
+
+/* ## Base/Elements
+--------------------------------------------- */
+
+$body-font-family:  "proxima-nova", verdana, arial, sans-serif;
+$body-font-weight: 300;
+$body-font-size: 18px;
+$body-font-size-lg: 18px;
+$body-line-height: 1.7;
+
+$body-bg-color: #fff;
+$body-text-color: #333;
+$body-selection-bg-color: #333;
+$body-selection-text-color: #fff;
+
+$default-link-color: $meri-color-2;
+$default-link-hover-color: $meri-color-1;
+
+$headline-font-family: "proxima-nova", arial, sans-serif;
+$headline-font-weight: 700;
+$headline-line-height: 1.2;
+$headline-default-margin: 0;
+$headline-text-transform: uppercase;
+
+$headline-h1-size: 36px;
+$headline-h2-size: 30px;
+$headline-h3-size: 24px;
+$headline-h4-size: 20px;
+$headline-h5-size: 18px;
+$headline-h6-size: 16px;
+
+$headline-primary-text-color: #dc0;
+$headline-secondary-text-color: #cc0;
+
+$body-default-transition: 0.1s;
+
+$paragraph-bottom-margin: 0;
+
+$blockquote-margin: 0;
+$blockquote-font-style: normal;
+$blockquote-quote-size: 30px;
+
+$table-line-height: 2;
+$table-margin-bottom: 40px;
+
+$td-padding: 6px 0;
+$th-font-weight: 400;
+
+$tbody-border-bottom: 1px solid #ddd;
+$td-border-top: 1px solid #ddd;
+
+/* ## Base/Forms
+--------------------------------------------- */
+
+$input-background-color: #fff;
+$input-border: 1px solid #ddd;
+$input-text-color: #333;
+$input-font-size: 18px;
+$input-focus-border: 1px solid #333;
+$placeholder-color: #777;
+
+
+$input-padding: 16px;
+$button-padding: 16px 24px;
+
+$button-primary-color: #333;
+$button-primary-hover-color: #555;
+$button-text-color: #fff;
+$button-text-hover-color: #fff;
+$footer-button-color: #333;
+$footer-button-hover-color: #fff;
+$footer-button-text-color: #fff;
+$footer-button-text-hover-color: #333;
+
+$button-font-size: 16px;
+$button-text-transform: uppercase;
+
+/* ## Base/Common
+--------------------------------------------- */
+
+$archive-title-font-size: 20px;
+$entry-title-font-size: 36px;
+
+$title-link-color: #333;
+$title-link-hover-color: $meri-color-3;
+
+$widget-title-font-size: 18px;
+$widget-title-margin-bottom: 20px;
+
+$footer-widget-title-color: #fff;
+
+$centered-item-margin: 0 auto 24px;
+$alignnone-item-margin-bottom: 12px;
+$alignleft-item-margin: 0 24px 24px 0;
+$alighright-item-margin: 0 0 24px 24px;
+
+$caption-font-size: 14px;
+$caption-font-weight: 700;
+
+$max-breakpoint-1: 1200px;
+$max-breakpoint-2: 960px;
+$max-breakpoint-3: 800px;
+
+
+/* ## Modules/Site Header
+--------------------------------------------- */
+
+$site-header-background-color: #fff;
+
+$primary-menu-background-color: $meri-color-2;
+$primary-menu-link-color: #fff;
+$primary-menu-secondary-link-color: #fff;
+$primary-menu-link-hover-background-color: $meri-color-1;
+
+$larger-primary-menu-fits: 51em;
+$larger-primary-menu-link-color: #777;
+$larger-primary-menu-link-hover-color: #fff;
+$larger-primary-menu-background-color: #fff;
+$larger-primary-menu-background-hover-color: $meri-color-2;
+$larger-primary-menu-secondary-background-hover-color: $meri-color-1;
+
+/* ## Misc
+--------------------------------------------- */
+
+$adjacent-section-margin-top: 3em;
+
+/**
+ * Sublevel Navigation
+ */
+$sublevel-navigation-background-color: #f0f0f0;
+$sublevel-navigation-text-color: #999;
+$sublevel-navigation-link-color: $meri-color-2;
+$sublevel-navigation-active-link-color: $meri-color-4;
+$sublevel-navigation-link-hover-color: $meri-color-1;
+$sublevel-navigation-max-width: 25em;
+$sublevel-navigation-fits-horizonal: 37.5em; /* 600px / 16px */
+
+/**
+ * Page Mast
+ */
+$page-mast-height-small: em(400px);
+$page-mast-height-med: em(500px);
+$page-mast-height-large: em(600px);
+$page-mast-can-be-med: em(800px);
+$page-mast-can-be-large: em(1600px);
+
+/**
+ * Page Lede
+ */
+$page-lede-max-width: em(600px);
+
+/**
+ * Grids
+ */
+$grid-2-breaks: em(650px);
+$grid-3-breaks: em(960px);
+$grid-4-fits-partial: em(600px);
+$grid-4-fits-full: em(1170px);
+$grid-text-max-width: em(600px);
+
+/**
+ * Testimonial--Callout
+ */
+$testimonial--callout-text-color: #fff;
+$testimonial--callout-background-color: $meri-color-4;
+$testimonial--callout-max-width: em(1000px, 16);
+
+/**
+ * Typical Program
+ */
+$typical-program-background-color: #f0f0f0;
+
+/**
+ * Bonus Cardology Module
+ */
+$bonus-cardology-module-background-color: $meri-color-2;
+$bonus-cardology-module-headline-color: #fff;
+$bonus-cardology-module-text-color: #fff;
+
+/**
+ * Test Info Tables
+ */
+$test-info-tables-thead-background-color: $meri-color-2;
+$test-info-tables-thead-text-color: #fff;
+$test-info-tables-tbody-odd-background-color: #f0f0f0;
+$test-info-tables-tbody-even-background-color: #ddd;
+$test-info-tables-level-up-1: em(560px);
+$table-container-max-width: em(840px, 18);
+$test-table-alert-color: $meri-color-3;
+
+/**
+ * Landing Page Nav
+ */
+$landing-page-nav-link-color: #fff;
+$landing-page-nav-link-background-color: $meri-color-2;
+$landing-page-nav-link-background-hover-color: lighten( $landing-page-nav-link-background-color, 25% );
+$landing-page-nav-max-width: em(1000px);
+
+/**
+ * page-templates/classes (landing page)
+ */
+$classes-landing-page-nav-horizontal: em(750px);
+
+/**
+ * page-templates/test-prep (landing page)
+ */
+$test-prep-landing-page-nav-horizontal-med: em(750px);
+$test-prep-landing-page-nav-horizontal-lg: em(920px);
+
+/**
+ * page-templates/college-admissions (landing page)
+ */
+$college-admissions-landing-page-nav-horizontal: em(750px);
+
+/**
+ * Tutor Profiles!
+ */
+$tutor-about-max-width: 50em;
+$tutor-details-horizontal: 50em;
+
+/* ## !!! TO SORT !!!
+--------------------------------------------- */
+
+$main-nav-link-text-color: #000;
+$main-nav-link-text-hover-color: #ccc;
+
+$headline-primary-text-color: $meri-color-3;
+$headline-secondary-text-color: $meri-color-4;
+
+$gallery-img-border: 1px solid #ddd;
+$gallery-img-hover-border: 1px solid #999;
+$gallery-item-margin: 0 0 28px;
+
+$author-box-title-font-size: 16px;
+
+$archive-author-box-bg-color: #fff;
+
+$site-footer-background-color: #f3f3f3;
+$site-footer-text-color: #777;
+$site-footer-font-size: .8em;
+$site-footer-line-height: 1;
+
+$secondary-footer-text-color: $site-footer-text-color;
+$secondary-footer-background-color: #555;
+
+$archive-author-font-size: 16px;
+
+$archive-author-box-margin-bottom: 40px;
+$archive-author-box-padding: 40px;
+$author-box-title-margin-bottom: 4px;
+
+$structural-wrap-max-width: 60em;
+$three-col-layout-max-width: 980px;
+$consultant-bios-can-fit-wide: 800px;
+$content-width: 800px;
+$three-col-layout-content-width: 580px;
+$sidebar-primary-width: 360px;
+$sidebar-secondary-width: 180px;
+
+$max-breakpoint-1: 1200px;
+$max-breakpoint-2: 960px;
+$max-breakpoint-3: 800px;
+
+$structural-wrap-small-padding: 5%;
+
+$consultant-photo-width: 250px;
+$avatar-margin: 24px; // for either left or right aligned
+$comment-avatar-margin: 0 16px 24px 0;
+
+$breadcrumb-margin-bottom: 20px;
+
+$site-header-wrap-padding: 40px 0;
+
+
+/* !!! END TO SORT !!!
+--------------------------------------------- */

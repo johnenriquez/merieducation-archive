@@ -1,0 +1,1300 @@
+/*!
+--------------------------------------------------------------------------------
+Theme Name: MeriTheme 2015
+Theme URI: http://merieducation.com/
+Author: John Enriquez for MeriEducation
+Author URI: http://johnenriquez.com/
+Description: A custom theme built for MeriEducation.
+Version: 0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Template: genesis
+
+This theme, like WordPress, is licensed under the GPL.
+--------------------------------------------------------------------------------
+*/
+
+/*
+--------------------------------------------------------------------------------
+For information about this Sass project structure, visit:
+ * http://webuild.envato.com/blog/how-to-scale-and-maintain-legacy-css-with-sass-and-smacss/
+
+For more information about the OOCSS, and BEM patterns, visit:
+ * https://medium.com/objects-in-space/f6f404727
+ * http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+
+
+Use this declaration within styles:
+ 1) Positioning: position, top, right, bottom, left, z-index, etc;
+ 2) Box-model: display, float, width, height, etc;
+ 3) Typography: font, line-height, color, text-align;
+ 4) Visual: background, border, border-radius, etc;
+ 5) Misc: opacity, etc;
+
+--------------------------------------------------------------------------------
+*/
+
+//==============================================================================
+// Global config variables, colour palette, etc
+//==============================================================================
+
+
+/**
+ * Contains and defines all variables used in this stylesheet.
+ */
+@import "vars";
+
+
+
+//==============================================================================
+// Mixin & function libraries
+//==============================================================================
+
+
+/**
+ * Toolkit includes common mixins, like the clearfix mixin
+ */
+@import "toolkit";
+@import "toolkit-REMOVE";
+
+
+/**
+ * Breakpoint-Sass makes a slick breakpoint interface
+ * https://github.com/at-import/breakpoint
+ */
+@import "vendor/breakpoint";
+
+
+/**
+ * Grids
+ * Dependency: breakpoint
+ */
+@import "grids";
+
+
+//==============================================================================
+// Base element styles
+//==============================================================================
+
+/**
+ * A not-so-agressive reset stylesheet. From HTML5 Boilerplate.
+ * - http://git.io/normalize
+ */
+@import "normalize";
+
+
+/**
+ * Sets all items to border-box-sizing. From _toolkit.scss
+ */
+@include border-box-sizing;
+
+@import "base/elements";
+@import "base/float-clearing";
+@import "base/forms";
+@import "base/common";
+
+
+//==============================================================================
+// Modules
+//==============================================================================
+
+@import "modules/layout";
+
+@import "modules/site-header";
+
+// @import "modules/site-navigation";
+
+@import "modules/site-footer";
+
+section + section {
+  margin-top: $adjacent-section-margin-top;
+}
+
+@import "modules/philosophy-timeline";
+
+.media {
+  display: flex;
+  align-items: flex-start;
+}
+  .media-figure {
+    margin-right: 1em;
+  }
+  .media-body {
+    flex: 1;
+  }
+
+/**
+ * Sublevel Navigation
+ */
+.sublevel-navigation {
+  background-color: $sublevel-navigation-background-color;
+  color: $sublevel-navigation-text-color;
+  text-align: center;
+  padding: .5em;
+  margin-top: 0;
+  font-weight: bold;
+
+  // @include breakpoint( $sublevel-navigation-fits-horizonal ) {
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   padding: 1em;
+  // }
+}
+  .sublevel-navigation__instructions {
+    margin: 0;
+    font-size: .7em;
+
+    @include breakpoint( $sublevel-navigation-fits-horizonal ) {
+      font-size: .9em;
+    }
+  }
+  .sublevel-navigation ul {
+    font-size: .9em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: $sublevel-navigation-max-width;
+    margin: auto;
+    text-transform: uppercase;
+    font-family: $headline-font-family;
+    font-weight: normal;
+
+    @include breakpoint( $sublevel-navigation-fits-horizonal ) {
+      font-size: 1.2em;
+    }
+  }
+  .sublevel-navigation li {
+    margin: 0 .5em;
+  }
+  .sublevel-navigation a {
+    color: $sublevel-navigation-link-color;
+
+    &.active { color: $sublevel-navigation-active-link-color; }
+    &:hover { color: $sublevel-navigation-link-hover-color; }
+  }
+
+/**
+ * Page Mast
+ */
+.page-mast {
+  display: block;
+  max-height: $page-mast-height-small;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  transition: max-height .3s;
+
+  @include breakpoint( $page-mast-can-be-med ) { max-height: $page-mast-height-med; }
+  @include breakpoint( $page-mast-can-be-large ) { max-height: $page-mast-height-large; }
+}
+  .page-mast:before {
+    content: "";
+    display: block;
+    padding-bottom: 50%;
+  }
+  .page-mast img {
+    display: block;
+  }
+
+/**
+ * Page Lede
+ */
+.lede-section-general {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+.page-lede {
+  text-align: center;
+  padding: 0 2em;
+  max-width: $page-lede-max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+  .page-lede-headline {
+    font-size: 1.6em;
+  }
+  .page-lede-text {
+    font-size: 1.2em;
+  }
+
+
+/**
+ * Testimonials
+ */
+.testimonial {
+
+}
+  .testimonial-quote {}
+  .testimonial-author {}
+  .t-testimonial-page .testimonial-section {
+    column-gap: 0;
+    @include breakpoint( em(720px) ) { column-count: 2; }
+    @include breakpoint( em(1200px) ) { column-count: 3; }
+  }
+  .t-testimonial-page .testimonial {
+    padding: 1.5em;
+    margin: 1em;
+    display: inline-block;
+    background: #f0f0f0;
+
+    .testimonial-author { text-align: right; }
+  }
+  .t-testimonial-page .testimonial strong {
+    color: $meri-color-4;
+  }
+  .testimonial--callout {
+    text-align: center;
+    padding: 1em;
+    margin: 1em;
+    max-width: $testimonial--callout-max-width;
+    color: $testimonial--callout-text-color;
+    background-color: $testimonial--callout-background-color;
+
+    &--raised {
+      margin-top: -1em;
+    }
+
+    &--lowered {
+      margin-bottom: -1em;
+    }
+
+    @include breakpoint( $testimonial--callout-max-width ) {
+      margin: 1em auto;
+      max-width: 70vw;
+
+      &--raised {
+        margin-top: -2em;
+      }
+      &--lowered {
+        margin-bottom: -2em;
+      }
+    }
+
+    .testimonial-quote {
+      margin-bottom: .5em;
+      font-weight: bold;
+      font-family: $headline-font-family;
+    }
+    .testimonial-author {
+      font-size: .8em;
+    }
+  }
+
+
+/**
+ * Typical Program
+ */
+.typical-program {
+  padding: 1em;
+  text-align: center;
+  margin: 3em 2.5em 0 2.5em;
+}
+  .typical-program .grid {
+    justify-content: center;
+  }
+  .typical-program .grid-cell {
+    display: flex;
+    flex-direction: column;
+    padding: .55em;
+    max-width: 100%;
+  }
+  .typical-program .typical-program-cell {
+    // specificity. gross, i know.
+    flex-grow: 1;
+    background-color: $typical-program-background-color;
+    padding: 1em;
+  }
+  .typical-program-subheadline {
+    margin-bottom: .5em;
+  }
+  .typical-program-desc {
+    margin: 0;
+    font-size: .9em;
+  }
+
+.typical-program + .bonus-module {
+  margin: 0 4em 5em 4em;
+}
+
+
+/**
+ * Bonus Cardology Module
+ */
+.bonus-cardology-module {
+  margin: 1em;
+  margin-top: 0;
+  padding: 1em;
+  text-align: center;
+  background-color: $bonus-cardology-module-background-color;
+  color: $bonus-cardology-module-text-color;
+}
+  .bonus-cardology-module h2 { color: $bonus-cardology-module-headline-color; }
+  .cardology-app-carousel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .cardology-app-carousel > * {
+    margin: .1em .2em;
+  }
+  .cardology-app-badge {
+    height: 5em;
+    width: auto;
+  }
+  .app-store-badge {
+    height: 3em;
+    width: auto;
+  }
+
+/**
+ * Test Info Tables
+ */
+.test-info-tables {
+  padding: 0 1em;
+  text-align: center;
+}
+  .test-info-tables table {
+    font-size: .7em;
+    text-align: left;
+
+    @include breakpoint( $test-info-tables-level-up-1 ) { font-size: .9em; }
+  }
+  .test-info-tables thead {
+    background-color: $test-info-tables-thead-background-color;
+    color: $test-info-tables-thead-text-color;
+    font-weight: bold;
+  }
+  .table-container {
+    max-width: $table-container-max-width;
+    margin: 0 auto;
+  }
+    .table-container--compressed {
+      max-width: $table-container-max-width;
+      margin: 0 auto;
+      @include breakpoint( max-width 720px ) { font-size: .8em; }
+    }
+  .test-info-tables tbody tr {
+    background-color: $test-info-tables-tbody-odd-background-color;
+  }
+  .test-info-tables tbody tr:nth-child( 2n ) {
+    background-color: $test-info-tables-tbody-even-background-color;
+  }
+  .test-info-tables td {
+    padding: 1em;
+    line-height: 1.3;
+  }
+    .table-container--compressed td {
+      @include breakpoint( max-width 720px ) { padding: .5em; }
+    }
+  .test-table-alert,
+  .orange-alert {
+    display: inline-block;
+    font-size: .8em;
+    color: $test-table-alert-color;
+    font-weight: bold;
+  }
+
+/**
+ * services-breakout-nav
+ */
+.services-breakout-nav {
+  text-align: center;
+  max-width: em(1000px);
+  margin-left: auto;
+  margin-right: auto;
+}
+  .services-breakout-nav.grid {
+    display: flex;
+  }
+  .services-breakout-nav.grid .grid-cell {
+    padding: .5em;
+    font-size: .9em;
+    flex: 0 0 100%;
+    max-width: 30em;
+  }
+    .services-breakout-nav.grid.grid--2 {
+      justify-content: center;
+      & > * { margin: 0; }
+    }
+    .services-breakout-nav.grid.grid--3 .grid-cell {
+      max-width: 25em;
+
+      @include breakpoint( 860px ) {
+        flex: 0 0 33.3333%;
+      }
+    }
+    .services-breakout-nav.grid.grid--4 .grid-cell {
+
+      @include breakpoint( 860px ) {
+        flex: 0 0 50%;
+      }
+    }
+  .services-breakout-nav .raised-title {
+    text-align: left;
+    font-size: 1.5em;
+  }
+  .services-breakout-nav .grid-cell img { display: block; }
+  .services-breakout-nav .emblem { position: relative; }
+  .services-breakout-nav a .emblem h2 {
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    padding: .5em;
+    background-color: rgba(0, 0, 0, .2);
+    transition: background-color .2s;
+  }
+  .services-breakout-nav a:hover .emblem h2 {
+    background-color: rgba(0, 0, 0, .4);
+  }
+  .services-breakout-nav.homepage-breakout-nav {
+    p {
+      color: $body-text-color;
+      padding: .5em;
+    }
+  }
+
+/**
+ * MISC
+ */
+.ap-bootcamps-callout,
+.isee-admissions-callout {
+  margin-left: 1em;
+  margin-right: 1em;
+  max-width: 50em;
+  background-color: #f0f0f0;
+  border: 2px solid $meri-color-1;
+
+  @include breakpoint( em(918px) ) {
+    //margin-left: auto;
+    // margin-right: auto;
+  }
+
+  h3 {
+    padding: .5em 1em;
+    text-align: center;
+    color: #fff;
+    background-color: $meri-color-1;
+  }
+
+  .callout-body {
+    padding: 1em;
+  }
+}
+
+  .isee-admissions-callout {
+    max-width: 100%;
+  }
+
+  .ap-bootcamps-callout ul {
+    text-align: center;
+    @include breakpoint( em(670px) ) {
+      column-count: 2;
+      text-align: left;
+    }
+  }
+
+/**
+ * Landing Page Navs
+ */
+.landing-page-nav {
+  text-align: center;
+}
+  .landing-page-nav-headline {
+    text-align: center;
+    font-weight: normal;
+    font-size: 1em;
+    color: $meri-color-4;
+  }
+  .landing-page-nav-list {
+    @include grid();
+    @include grid--full();
+    max-width: $landing-page-nav-max-width;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .landing-page-nav-list li {
+    padding: 0 1em 1em 1em;
+    display: flex;
+    flex-direction: column;
+  }
+  .landing-page-nav-list a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .landing-page-nav-list h3 {
+    display: block;
+    padding: .5em 1em 0 1em;
+    font-size: 1.3em;
+    margin: 0;
+    font-weight: bold;
+    color: $landing-page-nav-link-color;
+    background-color:  $landing-page-nav-link-background-color;
+  }
+  .landing-page-nav-list p {
+    font-size: .9em;
+    padding: 0 1em .5em 1em;
+    border: 2px solid $landing-page-nav-link-background-color;
+    border-top: 0;
+    background-color: $landing-page-nav-link-background-color;
+    color: #fff;
+    flex: 1;
+  }
+    // gradient effect
+    .landing-page-nav-list > :nth-child(2) {
+      h3 { background-color: lighten( $landing-page-nav-link-background-color, 6% ); }
+      p {
+        border-color: lighten( $landing-page-nav-link-background-color, 6% );
+        background-color: lighten( $landing-page-nav-link-background-color, 6% );
+      }
+    }
+    .landing-page-nav-list > :nth-child(3) {
+      h3 { background-color: lighten( $landing-page-nav-link-background-color, 12% ); }
+      p {
+        border-color: lighten( $landing-page-nav-link-background-color, 12% );
+        background-color: lighten( $landing-page-nav-link-background-color, 12% );
+      }
+    }
+    .landing-page-nav-list > :nth-child(4) {
+      h3 { background-color: lighten( $landing-page-nav-link-background-color, 18% ); }
+      p {
+        border-color: lighten( $landing-page-nav-link-background-color, 18% );
+        background-color: lighten( $landing-page-nav-link-background-color, 18% );
+      }
+    }
+  .landing-page-nav-list a:hover {
+    h3 { background-color: $landing-page-nav-link-background-hover-color; }
+    p {
+      border-color: $landing-page-nav-link-background-hover-color;
+      background-color: $landing-page-nav-link-background-hover-color;
+    }
+  }
+
+.college-bootcamp-divider {
+  text-align: center;
+}
+
+.grid-headline {
+  margin-top: 1em;
+}
+.grid-text {
+  margin: 0 auto;
+  max-width: $grid-text-max-width;
+  font-size: .9em;
+}
+
+/**
+ * Vector Icons
+ */
+.vector-icon {
+  // max-width: em(270px);
+  // max-height: em(270px);
+  padding: .5em;
+  margin: 0 auto;
+  display: block;
+}
+  // .new-sat-vector-icon {
+  //   // transform: rotate(20deg) translate( -15%, 5% );
+  //   max-height: em(240px);
+  // }
+  // .vector-swirl {
+  //   max-height: em(180px);
+  // }
+  // .vector-faders {
+  //   max-height: em(180px);
+  // }
+  // .vector-phone {
+  //   max-height: em(210px);
+  // }
+  // .vector-stethoscope {
+  //   max-height: em(210px);
+  // }
+  // .vector-brains {
+  //   max-height: em(200px);
+  // }
+  // .vector-stopwatch {
+  //   max-height: em(220px);
+  // }
+  // .vector-success {
+  //   max-height: em(220px);
+  // }
+  // .vector-rocket {
+  //   max-height: 14.75em;
+  // }
+  // .vector-greencheck {
+  //   max-height: 14.75em;
+  // }
+  // .vector-grad {
+  //   max-height: 10.75em;
+  // }
+  // .vector-easy-button {
+  //   max-height: 10.55em;
+  // }
+
+
+/**
+ * page-templates/academic-coaching
+ */
+.instagram-testimonial {
+  text-align: center;
+  display: block;
+  max-width: em(580px);
+  margin: 1em;
+
+  @include breakpoint( em(670px) ) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+  .instagram-media {
+
+  }
+
+
+/**
+ * page-templates/satact
+ */
+.satact-grid {
+  max-width: 60em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-bottom: 2em;
+}
+.satact-next-test-dates {
+  padding-bottom: 0;
+}
+
+
+/**
+ * page-templates/psat
+ */
+.psat-lede { padding-bottom: 0; }
+.psat-grid {
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/**
+ * page-templates/isee
+ */
+.psat-bulbs {
+  text-align: center;
+  padding: .5em;
+  background-color: #ffcf09;
+
+  img {
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    width: 400px;
+  }
+}
+
+/**
+ * page-templates/subject-tutoring
+ */
+.classes-blocks {
+  text-align: center;
+}
+.classes-block__item {
+  display: inline-block;
+  height: auto;
+  width: 150px;
+  padding: .25em;
+
+  @include breakpoint( max-width 800px ) {
+    padding: 1em;
+  }
+}
+
+/**
+ * College Admissions
+ */
+.we-helped-students {
+  text-align: center;
+}
+.college-logos {
+  // display: flex;
+  // flex-wrap: wrap;
+  // flex-direction: column;
+  // height: 80vh;
+  max-width: 65em;
+  margin: 1em auto;
+}
+  .college-logos img {
+    width: 6em;
+    margin: .5em;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+/**
+ * Testimonials
+ */
+.testimonials-main-vid {
+  text-align: center;
+  padding: 1em;
+}
+  .testimonials-main-vid .player {
+    margin: 0 auto;
+    max-width: 50em;
+  }
+
+/**
+ * Video Player
+ */
+.player { position: relative; overflow: hidden; }
+.js .player iframe { z-index: 0; }
+.js .player .play-button {
+  @include centerer();
+  z-index: 8; // cover goes up to 10
+
+  i {
+    color: #fff;
+    font-size: 5em;
+    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+    cursor: pointer;
+    &:hover {
+      color: $meri-color-2;
+      text-shadow: none;
+    }
+  }
+
+}
+.no-js .player .cover-photo { display: none; }
+.js .player .cover-photo {
+  @include coverer();
+  z-index: 2;
+}
+
+
+/**
+ * page-templates/classes (landing page)
+ */
+.classes-landing-page-nav-list {
+  @include breakpoint( $classes-landing-page-nav-horizontal ) {
+    @include grid--3();
+  }
+}
+
+/**
+ * page-templates/test-prep
+ */
+.test-prep-landing-page-nav-list {
+  @include breakpoint( $test-prep-landing-page-nav-horizontal-med ) {
+    @include grid--2();
+  }
+  @include breakpoint( $test-prep-landing-page-nav-horizontal-lg ) {
+    @include grid--4();
+  }
+}
+
+/**
+ * page-templates/college-admissions (landing page)
+ */
+.college-admissions-landing-page-nav-list {
+  @include breakpoint( $college-admissions-landing-page-nav-horizontal ) {
+    @include grid--2();
+  }
+}
+
+/**
+ * Tutor profiles!
+ */
+
+.t-tutors {}
+  .t-tutors .admins,
+  .t-tutors .tutors {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 70em;
+  }
+
+.tutor-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  & > * {
+    // flex: 0 0 12.5%;
+    min-width: 12em;
+  }
+}
+.tutor-card {
+  margin: .5em;
+  padding: .5em;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+  .tutor-card-photo {
+    @include aspect-ratio( 300, 272 );
+  }
+  .tutor-card-photo img {
+    @include coverer();
+    border: 1px solid #ccc;
+    z-index: 2
+  }
+  .tutor-card-photo img:nth-child(2) {
+    z-index: 0;
+  }
+  .tutor-card a:hover .tutor-card-photo img:nth-child(2) {
+    z-index: 3;
+  }
+  .tutor-card a {
+    color: #777;
+    font-family: $headline-font-family;
+    font-weight: bold;
+
+    &:hover { color: #000; }
+  }
+  .tutor-card-name {
+    display: block;
+    padding-top: .5em;
+  }
+
+
+.t-tutor-profile {
+  h3 { margin-bottom: 10px; }
+}
+.tutor-title {
+  text-align: center;
+  padding: 0 1em;
+}
+  .titleposition {
+    font-weight: normal;
+  }
+
+.tutor-about {
+  padding: 0 1em;
+  max-width: $tutor-about-max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+  .tutor-about h3 { text-align: center; }
+
+.tutor-photos {
+  text-align: center;
+  img {
+    display: inline-block;
+    max-width: 20em;
+    margin: 0 .5em;
+  }
+}
+
+.tutor-details {
+  max-width: 60em;
+  margin-left: auto;
+  margin-right: auto;
+  @include breakpoint( $tutor-details-horizontal ) {
+    display: flex;
+    align-items: center;
+
+    & > * {
+      flex: 1;
+    }
+  }
+}
+  .tutor-details .media-figure {
+    display: none;
+    @include breakpoint( $tutor-details-horizontal ) {
+      display: block;
+      max-width: 50px;
+    }
+  }
+  .tutor-percentiles {
+    @include breakpoint( $tutor-details-horizontal ) {
+      order: 2;
+      margin-left: 3em;
+    }
+  }
+  .tutor-aux {
+    @include breakpoint( $tutor-details-horizontal ) {
+      margin-top: 0;
+      margin-right: 3em;
+      h3 {
+        margin-left: 65px;
+      }
+    }
+  }
+
+.tutor-percentiles {
+  font-size: 1.2em;
+  border: 2px solid $meri-color-1;
+  background-color: #f0f0f0;
+  margin-left: .5em;
+  margin-right: .5em;
+  color: #555;
+  text-align: center;
+}
+  .tutor-percentiles h3 {
+    background-color: $meri-color-1;
+    padding: .5em;
+    font-size: 1.4em;
+    color: #fff;
+  }
+  .score-section {
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 25em;
+    margin-left: auto;
+    margin-right: auto;
+
+    & > * {
+      flex: 1;
+    }
+
+    .score-connector {
+      flex: 0 0 50px;
+      color: #999;
+    }
+  }
+  .score-group {
+    align-self: flex-start;
+  }
+    .score-group:last-child {
+    }
+  .score-number {
+    line-height: 1;
+    font-family: $headline-font-family;
+    font-weight: bold;
+    font-size: 3em;
+    color: $meri-color-2;
+
+    span {
+      font-weight: normal;
+      display: block;
+      font-size: .3em;
+      color: #999;
+    }
+
+    .ordinal {
+      display: inline-block;
+      color: $meri-color-2;
+      position: relative;
+      top: -1.5em;
+      left: .3em;
+    }
+  }
+  .score-subject {
+    font-weight: bold;
+    font-size: 1em;
+    color: $meri-color-2;
+  }
+.tutor-secondary-question {
+  padding: 0 1em;
+}
+  .tutor-secondary-question h3 {
+    text-align: center;
+    @include breakpoint( $tutor-details-horizontal ) { text-align: left; }
+  }
+.tutor-interests {}
+  .interests-list {
+    width: auto;
+    height: 120px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    li { display: inline-block; }
+  }
+.tutor-interests {
+  padding: 0 1em;
+}
+  .tutor-interests h3 {
+    text-align: center;
+    @include breakpoint( $tutor-details-horizontal ) { text-align: left; }
+  }
+
+.tutor-testimonials {
+  max-width: 53em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1em;
+  text-align: center;
+}
+  .tutor-testimonials .testimonial p {
+    font-size: 1.7em;
+  }
+  .tutor-testimonials .testimonial footer {
+    color: #888;
+  }
+  .tutor-testimonials .lslide {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+  }
+.more-tutors {
+  text-align: center;
+}
+  .more-tutors .button {
+    color: #fff;
+    background-color: $meri-color-2;
+    font-family: $headline-font-family;
+    padding: .5em 2em;
+
+    &:hover {
+      background-color: $meri-color-1;
+    }
+  }
+  .more-tutors .tutor-gallery {
+    margin-top: 1em;
+  }
+
+
+
+//==============================================================================
+// Shame Code
+// * http://csswizardry.com/2013/04/shame-css/
+//==============================================================================
+
+.all-levels-admissions-list {
+  font-weight: bold;
+  color: $meri-color-3;
+  font-size: .8em;
+}
+
+h3 { font-weight: normal; }
+
+// actually used
+h1.textbolding,
+h2.textbolding,
+h3.textbolding {
+  font-weight: 400;
+
+  span { font-weight: 700; }
+}
+
+
+.imeri-grid,
+.cardology-grid {
+  // @todo variablize
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.imeri-cell {
+  text-align: center;
+  font-size: .9em;
+  @include breakpoint( $grid-2-breaks ) { text-align: left; }
+
+  h3 {
+    font-size: 1.3em;
+  }
+}
+
+  .t-imeri .affordable-cell {
+    flex-grow: 1;
+  }
+
+.imeri-features .grid-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.imeri-feature-card {
+  background-color: #f0f0f0;
+  flex: 1;
+  padding: 1em;
+}
+  .imeri-feature-card h3 {
+    font-size: 1.2em;
+  }
+
+$cardology-grid-can-break: 600px;
+
+.cardology-grid {
+  @include clearfix();
+  text-align: center;
+}
+.cardology-slider-cell {
+  @include breakpoint( $cardology-grid-can-break ) {
+    float: left;
+    width: 30%;
+  }
+}
+.cardology-cell {
+  padding: 0 1em;
+  @include breakpoint( $cardology-grid-can-break ) {
+    width: 70%;
+    float: right;
+    text-align: left;
+  }
+}
+  .cardology-cell .app-store-badge {
+    margin-top: 1em;
+  }
+.cardology-stats {
+  @include grid();
+  @include grid--full();
+  background-color: $meri-color-4;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50em;
+
+  @include breakpoint( 200px ) { @include grid--2(); }
+  @include breakpoint( 470px ) { @include grid--4(); }
+}
+  .cardology-stats-card {
+    color: #fff;
+    font-weight: bold;
+    font-family: $headline-font-family;
+    text-align: center;
+    padding: 1em;
+    line-height: 1;
+  }
+  .stats-number {
+    font-size: 2em;
+    margin: 0;
+  }
+  .stats-label {
+    font-size: .8em;
+  }
+
+.college-students-available-services-grid {
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// @import "page-templates/homepage"; // @todo reprocess
+// @import "page-templates/blogindex";
+// @import "page-templates/single";
+// @import "page-templates/about-story";
+// @import "page-templates/about-testimonials";
+// @import "page-templates/classes-template";
+// @import "page-templates/testprep-satact";
+// @import "page-templates/testprep-psat";
+// @import "page-templates/testprep-ap";
+// @import "page-templates/testprep-isee";
+// @import "page-templates/college-ec";
+// @import "page-templates/college-bootcamp";
+// @import "page-templates/innovations";
+// @import "page-templates/imeri";
+// @import "page-templates/contact";
+// @import "page-templates/employee-portal";
+@import "page-templates/testing-portal";
+
+.player {
+  // position: relative;
+  // padding-top: 56.2757202%;
+}
+  // .player video,
+  // .player object,
+  // .player embed,
+  // .player iframe {
+  //   @include coverer();
+  // }
+
+
+//===========================================
+// FLEX CONTENT CSS FOR CUSTOM PAGE LAYOUTS
+//===========================================
+
+.nl-grid {
+  text-align: center;
+  max-width: 60em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+// testimonials
+  .page-id-96 .l,
+  .page-id-96 .m,
+  .page-id-96 .s { width: 100%; }
+  @media (min-width: 400px) {
+    .page-id-96 .l { width: 400px; }
+    .page-id-96 .m { width: 400px; }
+    .page-id-96 .s { width: 190px; }
+  }
+
+  .page-id-96 .masonry-grid {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+    @media (min-width: 400px) { .page-id-96 .masonry-grid { width: 400px; } }
+    @media (min-width: 610px) { .page-id-96 .masonry-grid { width: 610px; } }
+    @media (min-width: 820px) { .page-id-96 .masonry-grid { width: 820px; } }
+    @media (min-width: 1030px) { .page-id-96 .masonry-grid { width: 1030px; } }
+    @media (min-width: 1240px) { .page-id-96 .masonry-grid { width: 1240px; } }
+    @media (min-width: 1450px) { .page-id-96 .masonry-grid { width: 1450px; } }
+
+  .page-id-96 .masonry-grid-item {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+
+/* ## Makes FOUT a little better
+--------------------------------------------- */
+.wf-loading {
+  visibility: hidden;
+}
+
+.wf-active, .wf-inactive {
+  visibility: visible;
+}
+
+/* ## Try Us Free Modal
+--------------------------------------------- */
+
+#try-us-modal {
+  background-color: #fff;
+  z-index: 1500;
+  margin: 3em auto;
+  padding: 1em 2em;
+  max-width: 40em;
+}
+
+#try-us-modal .gform_wrapper .top_label .gfield_label {
+  font-weight: normal;
+}
+
+#try-us-modal input[type="checkbox"] {
+  -webkit-appearance: checkbox;
+}
+
+@import "shame";
+
+// @import "to-sort";
+// @import "modules/widgets"; // @todo re-process
+// @import "modules/content"; // @todo re-process
+// @import "modules/secondary-content";
+// @import "modules/misc";
+
+//==============================================================================
+// Global state classes
+//==============================================================================
+
+
+
+//==============================================================================
+// Third Party
+//==============================================================================
+
+/**
+ * Instagram widget on homepage
+ */
+.sb_instagram_header,
+#sbi_load { display: none; }
+
+@import "vendor/magnificent-popup";
+@import "vendor/animate-css";
+@import "vendor/lightslider";
+

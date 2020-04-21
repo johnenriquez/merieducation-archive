@@ -1,0 +1,9 @@
+.DS_Store
+.htaccess
+*.swp
+*-wp-config.php
+content/*
+!content/themes
+!content/plugins
+*.sass-cache*
+*node_modules*

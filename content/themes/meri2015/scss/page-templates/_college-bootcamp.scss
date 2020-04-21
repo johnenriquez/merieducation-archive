@@ -1,0 +1,55 @@
+/**
+ * Styles for College - Bootcamp
+ *
+ * @package meri2015
+ */
+
+.college-bootcamp-mast {
+  @include masthead;
+  // background-image: url( 'img/college-bootcamp-mast.jpg' );
+}
+
+.college-bootcamp-lede {
+  padding: 3em 1em;
+
+  h2 { text-align: center; }
+}
+
+.accepted-student {
+  width: 200px;
+}
+
+.bootcamp-testimonial {
+  padding-top: 1em;
+}
+
+.college-bootcamp-average-program {
+  h2 { text-align: center; }
+  li {
+    margin-left: 2em;
+    list-style: bullet;
+  }
+}
+
+.college-bootcamp-image-interlude {
+  text-align: center;
+  padding: 2em 1em;
+}
+
+.college-bootcamp-schedule {
+
+  h2 { text-align: center; }
+
+  .two-thirds {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .one-third {
+    text-align: center;
+
+    @include breakpoint( 800px ) {
+      text-align: right;
+    }
+  }
+
+}

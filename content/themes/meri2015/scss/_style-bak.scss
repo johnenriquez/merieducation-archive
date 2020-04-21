@@ -1,0 +1,160 @@
+/*!
+--------------------------------------------------------------------------------
+Theme Name: MeriTheme 2015
+Theme URI: http://merieducation.com/
+Author: John Enriquez for MeriEducation
+Author URI: http://johnenriquez.com/
+Description: A custom theme built for MeriEducation.
+Version: 0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Template: genesis
+
+This theme, like WordPress, is licensed under the GPL.
+--------------------------------------------------------------------------------
+*/
+
+/*
+--------------------------------------------------------------------------------
+For information about this Sass project structure, visit:
+ * http://webuild.envato.com/blog/how-to-scale-and-maintain-legacy-css-with-sass-and-smacss/
+
+For more information about the OOCSS, and BEM patterns, visit:
+ * https://medium.com/objects-in-space/f6f404727
+ * http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/
+
+
+Use this declaration within styles:
+ 1) Positioning: position, top, right, bottom, left, z-index, etc;
+ 2) Box-model: display, float, width, height, etc;
+ 3) Typography: font, line-height, color, text-align;
+ 4) Visual: background, border, border-radius, etc;
+ 5) Misc: opacity, etc;
+
+--------------------------------------------------------------------------------
+*/
+
+//==============================================================================
+// Global config variables, colour palette, etc
+//==============================================================================
+
+
+/**
+ * Contains and defines all variables used in this stylesheet.
+ */
+@import "vars";
+
+
+
+//==============================================================================
+// Mixin & function libraries
+//==============================================================================
+
+
+/**
+ * Toolkit includes common mixins, like the clearfix mixin
+ */
+@import "toolkit";
+
+
+/**
+ * Breakpoint-Sass makes a slick breakpoint interface
+ * https://github.com/at-import/breakpoint
+ */
+@import "vendor/breakpoint";
+
+
+
+//==============================================================================
+// Base element styles
+//==============================================================================
+
+// temp
+// @import "vendor/genesis";
+
+/**
+ * A not-so-agressive reset stylesheet. From HTML5 Boilerplate.
+ * - http://git.io/normalize
+ */
+@import "normalize";
+
+
+/**
+ * Sets all items to border-box-sizing. From _toolkit.scss
+ */
+@include border-box-sizing;
+
+@import "base/elements";
+@import "base/float-clearing";
+@import "base/forms";
+@import "base/common";
+
+
+//==============================================================================
+// Modules
+//==============================================================================
+
+@import "modules/layout";
+@import "modules/widgets"; // @todo re-process
+@import "modules/header";
+@import "modules/navigation"; // @todo re-process
+@import "modules/content"; // @todo re-process
+@import "modules/secondary-content";
+@import "modules/footer"; // @todo re-process
+@import "modules/misc";
+
+//==============================================================================
+// Page Templates
+// (These are technically modules, lol)
+//==============================================================================
+
+@import "page-templates/homepage";
+
+@import "page-templates/blogindex";
+@import "page-templates/single";
+
+@import "page-templates/about-story";
+@import "page-templates/about-testimonials";
+
+@import "page-templates/classes-template";
+
+@import "page-templates/testprep-satact";
+@import "page-templates/testprep-psat";
+@import "page-templates/testprep-ap";
+@import "page-templates/testprep-isee";
+
+@import "page-templates/college-ec";
+@import "page-templates/college-bootcamp";
+
+@import "page-templates/innovations";
+@import "page-templates/imeri";
+
+@import "page-templates/contact";
+
+@import "page-templates/employee-portal";
+@import "page-templates/testing-portal";
+
+
+
+
+//==============================================================================
+// Shame Code
+// * http://csswizardry.com/2013/04/shame-css/
+//==============================================================================
+
+
+//==============================================================================
+// Global state classes
+//==============================================================================
+
+
+
+//==============================================================================
+// Third Party
+//==============================================================================
+
+@import "vendor/magnificent-popup";
+@import "vendor/animate-css";
+@import "vendor/lightslider";
+

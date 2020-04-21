@@ -1,0 +1,237 @@
+/**
+ * Misc Tools for SCSS
+ */
+
+
+/**
+ * As taken from the 2012 update from:
+ * - https://css-tricks.com/snippets/css/clear-fix/
+ *
+ * This works if you don't need to suppoert below IE 8.
+ */
+@mixin clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+}
+
+
+/**
+ * Updated border-box sizing for 2014:
+ * - http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ */
+@mixin border-box-sizing() {
+  html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+}
+
+
+/**
+ * Cover EVERYTHING
+ * http://codepen.io/chriscoyier/blog/some-mini-sass-mixins-i-like
+ */
+@mixin coverer() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/**
+ * Vertically and horizontally centers an element
+ * http://codepen.io/chriscoyier/blog/some-mini-sass-mixins-i-like
+ */
+@mixin centerer() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  // @todo fallback + autoprefixer
+  -webkit-transform: translate( -50%, -50% );
+  transform: translate( -50%, -50% );
+}
+
+/**
+ * Vertically (only) centers an element
+ * based on http://codepen.io/chriscoyier/blog/some-mini-sass-mixins-i-like
+ */
+@mixin vcenterer() {
+  position: absolute;
+  top: 50%;
+  // @todo fallback + autoprefixer
+  -webkit-transform: translateY( -50% );
+  transform: translateY( -50% );
+}
+
+/**
+ * Tool used to generate boxes of proper aspect ratios
+ * https://css-tricks.com/snippets/sass/maintain-aspect-ratio-mixin/
+ */
+@mixin aspect-ratio( $width, $height ) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ( $height / $width ) * 100%;
+  }
+  > :first-child {
+    @include coverer();
+  }
+}
+
+
+// layout stuff @todo fix this
+// @mixin fullbleedrow {
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   align-content: stretch;
+//   align-items: center;
+// }
+
+// @mixin fullbleedrow__primary($max-width: 100%) {
+//   width: 100%;
+//   max-width: $max-width/2;
+//   // align-self: flex-end;
+// }
+
+// @mixin fullbleedrow__secondary($max-width: 100%) {
+//   width: 100%;
+//   max-width: $max-width/2;
+//   // align-self: flex-end;
+// }
+
+
+
+// .fullbleedrow { @include fullbleedrow; }
+// .row__primary { @include fullbleedrow__primary( $structural-wrap-max-width ); }
+// .row__secondary { @include fullbleedrow__secondary( $structural-wrap-max-width ); }
+
+// @mixin masthead {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: stretch;
+//   height: 50vh;
+//   background-size: cover;
+//   background-position: center center;
+//   background-repeat: no-repeat;
+
+//   @include breakpoint( 900px ) {
+//     height: 60vh;
+//   }
+
+//   h2 {
+//     text-align: center;
+//     font-size: 3em;
+//     padding: 1em .5em 0;
+//     color: #fff;
+//   }
+// }
+
+// @mixin ledetext {
+//   h2 { font-size: 2em; }
+//   p { font-size: 1.2em; }
+// }
+
+@mixin image-interlude( $background-url: '' ) {
+  // position: relative;
+  height: 55vh;
+  overflow-y: hidden;
+  // perspective: 1px;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: center center;
+
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   background-image: url( $background-url );
+
+  //   transform: translateZ(-2px) scale(3);
+  // }
+}
+
+
+// @todo: make this into a reusable tool
+// .five-sixths,
+// .four-sixths,
+// .one-fourth,
+// .one-half,
+// .one-sixth,
+// .one-third,
+// .three-fourths,
+// .three-sixths,
+// .two-fourths,
+// .two-sixths,
+// .two-thirds {
+//   float: left;
+//   margin-left: 2.564102564102564%;
+// }
+
+// .one-half,
+// .three-sixths,
+// .two-fourths {
+//   width: 48.717948717948715%;
+// }
+
+// .one-third,
+// .two-sixths {
+//   width: 31.623931623931625%;
+// }
+
+// .four-sixths,
+// .two-thirds {
+//   width: 65.81196581196582%;
+// }
+
+// .one-fourth {
+//   width: 23.076923076923077%;
+// }
+
+// .three-fourths {
+//   width: 74.35897435897436%;
+// }
+
+// .one-sixth {
+//   width: 14.52991452991453%;
+// }
+
+// .five-sixths {
+//   width: 82.90598290598291%;
+// }
+
+// .first {
+//   clear: both;
+//   margin-left: 0;
+// }
+
+// .five-sixths,
+// .four-sixths,
+// .one-fourth,
+// .one-half,
+// .one-sixth,
+// .one-third,
+// .three-fourths,
+// .three-sixths,
+// .two-fourths,
+// .two-sixths,
+// .two-thirds {
+//   @include breakpoint( max-width $max-breakpoint-3 ) {
+//     margin: 0;
+//     width: 100%;
+//   }
+// }
